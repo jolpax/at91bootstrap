@@ -1,0 +1,23 @@
+# Copyright (C) 2006 Microchip Technology Inc. and its subsidiaries
+#
+# SPDX-License-Identifier: MIT
+
+config SPI_BUS_MAX
+	int
+	default 5 if NDX1
+
+config SPI_IOSET_MAX
+	int
+	default 6 if NDX1
+
+config QSPI_BUS_MAX
+	int
+	default 0 if NDX1
+
+config QSPI_IOSET_MAX
+	int
+	default 1 if NDX1
+
+config DEVICENAME
+	string
+	default "ndx1" if NDX1
