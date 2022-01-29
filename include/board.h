@@ -11,6 +11,18 @@
 #include "sam9x60_board.h"
 #endif
 
+#ifdef CONFIG_NCX1
+#include "ncx1_board.h"
+#endif
+
+#ifdef CONFIG_NDX1
+#include "ndx1_board.h"
+#endif
+
+#ifdef CONFIG_NSR1
+#include "nsr1_board.h"
+#endif
+
 #ifdef CONFIG_SAMA5D2
 #include "sama5d2_board.h"
 #endif
