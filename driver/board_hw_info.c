@@ -117,6 +117,7 @@ static struct {
 	{"ATMEL-RF0",	VENDOR_ATMEL_RFO},
 	{"MCHIP RFO",	VENDOR_MCHIP_RFO},
 	{"MCHIP RDC",	VENDOR_MCHIP_RDC},
+	{"CABSY RDC",	VENDOR_CABSY_RDC},
 	{0,		0},
 };
 
@@ -456,6 +457,10 @@ static unsigned int set_default_sn(void)
 	 */
 	board_id_ek = BOARD_ID_SAM9X60_EK;
 	vendor_ek = VENDOR_MCHIP_RDC;
+#elif defined(CONFIG_BOARD_QUIRK_NCX1)
+	board_id_ek = BOARD_ID_NCX1;
+	vendor_ek = VENDOR_CABSY_RDC;
+
 #elif defined(CONFIG_BOARD_QUIRK_SAM9X60_CURIOSITY)
         /* sam9x60_curiosity ; with display module
          */
@@ -517,7 +522,8 @@ static unsigned int set_default_rev(void)
 	rev_id_ek = '1';
 #elif defined(CONFIG_BOARD_QUIRK_SAM9X60_EK) || \
 	  defined(CONFIG_BOARD_QUIRK_SAM9X60_EB) || \
-            defined(CONFIG_BOARD_QUIRK_SAM9X60_CURIOSITY)
+            defined(CONFIG_BOARD_QUIRK_SAM9X60_CURIOSITY) || \
+			defined(CONFIG_BOARD_QUIRK_NCX1)
 	rev_cm = 'A';
 	rev_dm = 'A';
 	rev_ek = 'A';
