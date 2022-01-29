@@ -19,7 +19,7 @@
 #include "timer.h"
 #include "watchdog.h"
 #include "string.h"
-#include "ncx1_board.h"
+#include "sam9x60_board.h"
 #include "board_hw_info.h"
 #include "twi.h"
 #include "flexcom.h"
@@ -139,20 +139,6 @@ static void initialize_dbgu(void)
 {
 	at91_dbgu_hw_init();
 	usart_init(BAUDRATE(MASTER_CLOCK, BAUD_RATE));
-}
-
-
-static void init_pins(void)
-{
-	pio_set_gpio_input(AT91C_PIN_PC(9), 0); // jolp add sensor
-	// pio_set_gpio_input(AT91C_PIN_PC(10), 0); // jolp add sensor
-	// pio_set_gpio_input(AT91C_PIN_PC(14), 0); // jolp add sensor
-	pio_set_gpio_output(AT91C_PIN_PC(7), 0); // en Pwms
-	pio_set_gpio_output(AT91C_PIN_PC(0), 0); // 12V En
-	pio_set_gpio_output(AT91C_PIN_PB(14), 0); // jolp add
-	pio_set_gpio_output(AT91C_PIN_PB(13), 0);
-	pio_set_gpio_output(AT91C_PIN_PB(11), 0);
-	pio_set_gpio_output(AT91C_PIN_PB(12), 0); // jolp 1
 }
 
 #if defined CONFIG_TWI
@@ -298,12 +284,8 @@ void hw_init(void)
 	/* Disable watchdog */
 	at91_disable_wdt();
 
-	/*Init Pins*/
-
-	init_pins(); // jolp
-
 #ifdef CONFIG_LED_ON_BOARD
-	// at91_leds_init();
+	at91_leds_init();
 #endif
 
 	/* Configure & Enable PLLA */
