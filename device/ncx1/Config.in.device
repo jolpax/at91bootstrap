@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier: MIT
 
-config	NCX1
+config	SAM9X60
 	select CORE_ARM926EJS
 	select CPU_HAS_SCKC
 	select CPU_HAS_PIO3
@@ -30,5 +30,4 @@ config	NCX1
 	select ALLOW_CPU_CLK_600MHZ
 	select ALLOW_CRYSTAL_24_000MHZ
 	select SUPPORT_BUS_SPEED_200MHZ
-	bool "NCX1"
-
+	bool "SAM9X60"

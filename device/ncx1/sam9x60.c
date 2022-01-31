@@ -19,7 +19,7 @@
 #include "timer.h"
 #include "watchdog.h"
 #include "string.h"
-#include "ncx1_board.h"
+#include "sam9x60_board.h"
 #include "board_hw_info.h"
 #include "twi.h"
 #include "flexcom.h"

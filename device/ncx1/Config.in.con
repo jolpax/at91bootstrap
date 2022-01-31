@@ -6,7 +6,7 @@ config CONSOLE_INDEX
 	int "Console Port"
 	range 0 13
 	default 0
-	depends on NCX1
+	depends on SAM9X60
 	help
 	  Select the peripheral wired to the debug console port:
 	  Value | Name   |   Description

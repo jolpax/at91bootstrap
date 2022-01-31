@@ -4,20 +4,20 @@
 
 config SPI_BUS_MAX
 	int
-	default 5 if NCX1
+	default 5 if SAM9X60
 
 config SPI_IOSET_MAX
 	int
-	default 6 if NCX1
+	default 6 if SAM9X60
 
 config QSPI_BUS_MAX
 	int
-	default 0 if NCX1
+	default 0 if SAM9X60
 
 config QSPI_IOSET_MAX
 	int
-	default 1 if NCX1
+	default 1 if SAM9X60
 
 config DEVICENAME
 	string
-	default "ncx1" if NCX1
+	default "sam9x60" if SAM9X60
